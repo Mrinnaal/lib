@@ -1,0 +1,15 @@
+<div id="container2">
+  <mat-form-field class="selector">
+    <mat-select  placeholder="Select-Genre" [(ngModel)]="dropDownValue">
+      <mat-option *ngFor="let val of dropDownArray" [value]="val">
+        {{ val }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput class="search" placeholder="Search by title or author" type="text" [(ngModel)]="searchValue">
+  </mat-form-field>
+  <div class="container2">
+    <app-book-model *ngFor = "let b of book | bookFilter: [dropDownValue,searchValue]; let i=index" [book]="b" [issuedBooks]="issuedBooks" [bookId]="i"></app-book-model>
+  </div>
+</div>

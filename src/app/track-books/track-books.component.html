@@ -1,0 +1,78 @@
+<mat-card>
+  <mat-card-content>
+    <mat-tab-group class="demo-tab-group">
+      <mat-tab label="Tab 1">
+        <ng-template mat-tab-label>
+          <i class="material-icons">book</i>
+        </ng-template>
+        <div class="demo-tab-content">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class="thead-light">
+                <tr>
+                  <th id="heading">No.</th>
+                  <th id="heading">Book Name</th>
+                  <th id="heading">Author</th>
+                  <th id="heading">Taken No.</th>
+                  <th id="heading">Available No.</th>
+                  <th id="heading">Taken By</th>
+                  <th id="heading">Date of Issue</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let book of bookTrack; let i=index">
+                  <td>{{i+1}}</td>
+                  <td>{{book.BookName}}</td>
+                  <td>{{book.AuthorName}}</td>
+                  <td>{{book.TakenBy.length}}</td>
+                  <td>{{book.Available}}</td>
+                  <td>
+                    <span *ngIf="book.TakenBy.length>0">
+                      <span *ngFor="let taken of book.TakenBy">{{taken.user}}<br>
+                      </span>
+                    </span>
+                  </td>
+                  <td>
+                    <span *ngIf="book.TakenBy.length>0">
+                      <span *ngFor="let taken of book.TakenBy">{{taken.fromDate|date}}<br>
+                      </span>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>            
+        </div>
+      </mat-tab>
+      <mat-tab label="Tab 2">
+        <ng-template mat-tab-label>
+          <i class="material-icons">person</i>
+        </ng-template>
+        <div class="demo-tab-content">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class="thead-light">
+                <tr>
+                  <th id="heading">No.</th>
+                  <th id="heading">User Email</th>
+                  <th id="heading">Book Name</th>
+                  <th id="heading">Issue Date</th>
+                  <th id="heading">Due Date</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let user of userTrack; let i=index">
+                <tr *ngFor="let taken of user.issuedBooks; let j=index">
+                  <td>{{i+1}}</td>
+                  <td>{{user.email}}</td>
+                  <td>{{taken.BookName}}</td>
+                  <td>{{taken.fromDate|date}}</td>
+                  <td>{{taken.dueDate|date}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>  
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>

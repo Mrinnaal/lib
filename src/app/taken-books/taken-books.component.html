@@ -1,0 +1,95 @@
+<div id="container2">
+<!--pending books-->
+  <h3 class="heading" *ngIf="issuedBooks.length<1">You don't have any pending books to return</h3>
+  <h3 class="heading" *ngIf="issuedBooks.length>0">Books to return</h3>
+  <div class="table-responsive" *ngIf="issuedBooks.length>0">
+    <table class="table" >
+      <thead class="thead-light">
+        <tr>
+          <td>No.</td>
+          <td>Book Name</td>
+          <td>Author Name</td>
+          <td>Issued Date</td>
+          <td>Due Date</td>
+          <td>Return</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of issuedBooks; let i=index;">
+          <td>{{i+1}}</td>
+          <td>{{book.BookName}}</td>
+          <td>{{book.AuthorName}}</td>
+          <td>{{book.fromDate | date}}</td>
+          <td>{{book.dueDate | date}}</td>
+          <td>
+            <button mat-raised-button data-toggle="modal" [attr.data-target]="'#bookModal'+ i">Return</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <mat-divider></mat-divider>
+<!--history-->
+<h3 class="heading" *ngIf="history.length<1">You don't have any history of books</h3>
+  <h3 class="heading" *ngIf="history.length>0">Books History</h3>
+  <div class="table-responsive" *ngIf="history.length>0">
+    <table class="table" >
+      <thead class="thead-light">
+        <tr>
+          <td>No.</td>
+          <td>Book Name</td>
+          <td>Author Name</td>
+          <td>Issued Date</td>
+          <td>Return Date</td>
+          <td>You Rated</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of history; let i=index;">
+          <td>{{i+1}}</td>
+          <td>{{book.BookName}}</td>
+          <td>{{book.AuthorName}}</td>
+          <td>{{book.fromDate | date}}</td>
+          <td>{{book.toDate | date}}</td>
+          <td>
+            <rating [(ngModel)]="book.rating" [readonly]="true"></rating>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!--modal-popup-->
+<div *ngIf="issuedBooks.length>0">
+  <div [attr.id]="'bookModal'+i" *ngFor="let book of issuedBooks; let i=index;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title><h3>Return Book</h3></mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div>Book Name <span style="padding-left:54px;">: {{book.BookName}}</span> </div>
+            <div>Author Name <span style="padding-left:45px;">: {{book.AuthorName}}</span> </div>
+            <div>Issued Date <span style="padding-left:52px;">: {{book.fromDate | date}}</span> </div>
+            <div>Returned Date <span style="padding-left:36px;">: {{today | date}}</span> </div>
+          </mat-card-content>
+          <mat-divider></mat-divider>
+          <mat-card-content>
+            <div style="padding-top:7px">
+              Rate the book 
+              <span><rating [(ngModel)]="starsCount" [float]="false" [required]="true" [titles]="['worst', 'poor', 'average', 'excellent', 'awesome']"></rating></span>
+            </div>
+          </mat-card-content>
+          <mat-divider></mat-divider>
+          <mat-card-actions>
+            <button mat-raised-button (click)="return(book,i)">Return Book</button>
+            <button mat-raised-button data-dismiss="modal">Cancel</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,72 @@
+[
+  {
+    "Id": 1,
+    "BookName": "To Kill a Mockingbird",
+    "AuthorName": "Harper Lee",
+    "Genre": "Social",
+    "ISBN": "9788373015470",
+    "ImageUrl": "https://amedia.britannica.com/300x500/21/182021-131-90346745.jpg",
+    "Description": "The novel examines racism in the American South through the innocent wide eyes of a clever young girl named Jean Louise (“Scout”) Finch.",
+    "Available": 6,
+    "Location": "Rack 1",
+    "Rating":"4",
+    "Taken": 0,
+    "TakenBy":[]
+  },
+  {
+    "Id": 2,
+    "BookName": "The Great Gatsby",
+    "AuthorName": "F. Scott Fitzgerald",
+    "Genre": "Fiction",
+    "ISBN": "9781597226769",
+    "ImageUrl": "https://amedia.britannica.com/300x500/47/24647-004-2EB51965.jpg",
+    "Description": "The Great Gatsby provides an insider’s look into the Jazz Age of the 1920s in United States history while at the same time critiquing the idea of the “American Dream”.",
+    "Available": 4,
+    "Location": "Rack 2",
+    "Rating":"5",
+    "Taken": 0,
+    "TakenBy":[]
+  },
+  {
+    "Id": 3,
+    "BookName": "A Passage to India",
+    "AuthorName": "E.M. Forster",
+    "Genre": "Love",
+    "ISBN": "9788440200334",
+    "ImageUrl": "https://amedia.britannica.com/300x500/82/11782-004-305E324D.jpg",
+    "Description": "The book follows a Muslim Indian doctor named Aziz and his relationships with an English professor, Cyril Fielding, and a visiting English schoolteacher named Adela Quested.",
+    "Available": 2,
+    "Location": "Rack 6",
+    "Rating":"3",
+    "Taken": 0,
+    "TakenBy":[]
+  },
+   {
+    "Id": 4,
+    "BookName": "The Color Purple",
+    "AuthorName": "Alice Walker",
+    "Genre": "Social",
+    "ISBN": "9783499154270",
+    "ImageUrl": "https://amedia.britannica.com/300x500/54/90554-004-1C286E84.jpg",
+    "Description": "Set in the post-Civil War American South, the novel follows a young African American girl named Celie into adulthood in letters she writes to God and to her sister Nettie. ",
+    "Available": 7,
+    "Location": "Rack 5",
+    "Rating":"4",
+    "Taken": 0,
+    "TakenBy":[]
+  },
+  {
+    "Id": 5,
+    "BookName": "Invisible Man",
+    "AuthorName": "Ralph Ellison",
+    "Genre": "Fiction",
+    "ISBN": "9783499154270",
+    "ImageUrl": "https://amedia.britannica.com/300x500/11/79911-004-5B795F1E.jpg",
+    "Description": "The narrator of the novel, a man who is never named but believes he is “invisible” to others socially, tells the story of his move from the South to college and then to New York City.",
+    "Available": 3,
+    "Location": "Rack 3",
+    "Rating":"5",
+    "Taken": 0,
+    "TakenBy":[]
+  }
+]

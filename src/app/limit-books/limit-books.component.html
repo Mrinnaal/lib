@@ -1,0 +1,10 @@
+<div class="example-container">
+  <h1>Limit Books</h1>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.noOfBooks" placeholder="number of books per user">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.noOfDays" placeholder="number of days per issue">
+  </mat-form-field>
+  <button mat-raised-button (click)=updatePromise(data)>Update</button>
+</div>

@@ -1,0 +1,34 @@
+<ng-container>
+  <mat-toolbar class="example-header">
+    <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1>Any Time Library</h1>
+    <span class="example-spacer"></span>
+    <h1>Logout</h1>
+    <button mat-icon-button (click)="logout()"><i class="material-icons">power_settings_new</i></button>
+    </mat-toolbar>
+
+  <mat-sidenav-container class="example-container">
+
+    <mat-sidenav #sidenav mode="side" class="example-sidenav">
+      <mat-nav-list>
+        <a mat-list-item  (click)="setSidebarContent('profile')">Profile</a>
+        <a mat-list-item  (click)="setSidebarContent('list-book')">Books</a>
+        <a mat-list-item  (click)="setSidebarContent('taken-books')">My Books</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content [ngSwitch]="sidebarContent">
+      <app-profile *ngSwitchCase="'profile'" [user]="user.user"></app-profile>
+      <app-list-book *ngSwitchCase="'list-book'" [book]="user.books" [issuedBooks]="issuedBooks"></app-list-book>
+      <app-taken-books *ngSwitchCase="'taken-books'" [book]="user.books" [issuedBooks]="issuedBooks" [history]="history"></app-taken-books>
+      <app-profile *ngSwitchDefault></app-profile>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+
+  <mat-toolbar class="example-footer"></mat-toolbar>
+</ng-container>
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

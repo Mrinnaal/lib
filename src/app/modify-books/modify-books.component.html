@@ -1,0 +1,90 @@
+<div id="container2">
+  <mat-form-field class="selector">
+  <mat-select  placeholder="Select-Genre" [(ngModel)]="dropDownValue">
+    <mat-option *ngFor="let val of dropDownArray" [value]="val">
+      {{ val }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+  <div class="table-responsive">
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <td>No.</td>
+        <td>
+          Book Name
+        </td>
+        <td>
+          Author Name
+        </td>
+        <td>
+          ISBN
+        </td>
+        <td>
+          Genre
+        </td>
+        <td>
+          Total Books
+        </td>
+        <td>
+          Update
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of booksList  | bookFilter: [dropDownValue,'']; let i=index;" ng-init="edit[i]=false;">
+        <td>{{i+1}}</td>
+
+        <td *ngIf="!edit[i]">{{book.BookName}}</td>
+        <td *ngIf="edit[i]">
+          <mat-form-field>
+          <input matInput placeholder="Book Name" type="text" [(ngModel)]="book.BookName" />
+          </mat-form-field>
+        </td>
+
+        <td *ngIf="!edit[i]">{{book.AuthorName}}</td>
+        <td *ngIf="edit[i]">
+          <mat-form-field>
+          <input matInput placeholder="Author Name" type="text" [(ngModel)]="book.AuthorName" />
+          </mat-form-field>
+        </td>
+
+        <td *ngIf="!edit[i]">
+          {{book.ISBN}}
+        </td>
+        <td *ngIf="edit[i]">
+          <mat-form-field>
+          <input matInput placeholder="ISBN" type="number" [(ngModel)]="book.ISBN" />
+          </mat-form-field>
+        </td>
+
+        <td *ngIf="!edit[i]">{{book.Genre}}</td>
+        <td *ngIf="edit[i]">
+          <mat-form-field>
+          <input matInput placeholder="Genre" type="text" [(ngModel)]="book.Genre" />
+          </mat-form-field>
+        </td>
+
+        <td *ngIf="!edit[i]">{{book.Available}}</td>
+        <td *ngIf="edit[i]">
+          <mat-form-field>
+          <input matInput placeholder="Available No." type="number" [(ngModel)]="book.Available" />
+          </mat-form-field>
+        </td>
+
+        <td *ngIf="!edit[i]">
+          <button mat-raised-button (click)="edit[i]=!edit[i];">Modify</button>
+        </td>
+        <td *ngIf="edit[i]">
+          <button mat-raised-button (click)="edit[i]=!edit[i];update(book)">Update</button>
+        </td>
+
+        <!--<td *ngIf="!edit[i]">
+          <button mat-raised-button (click)="delete(book.Id)">Delete</button>
+        </td>-->
+
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>

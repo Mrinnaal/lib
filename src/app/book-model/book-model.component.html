@@ -1,0 +1,40 @@
+<div class="container">
+  <header>{{book.BookName}}</header>
+  <div class="grid-row">
+    <div class="col-4">
+      <img src="{{book.ImageUrl}}" alt="book-image"/>
+    </div>
+    <div class="col-8 main-content">
+      <h1>by {{book.AuthorName}}</h1>
+      <p>
+        {{book.Description}}<br><br>
+        <button mat-raised-button type="button" [ngClass]="{'disabled': issuedBooks.length>=perUserBooks || issuedArray.indexOf(book.Id)>-1,  'btn':true,  'btn-info':true, 'cardIssueBtn': true}"
+                                        data-toggle="modal" [attr.data-target]="issuedBooks.length>=perUserBooks || issuedArray.indexOf(book.Id)>-1 ? ' ': targetId">{{issuedArray.indexOf(book.Id)>-1 ? 'Rented' : 'Rent Book'}}</button>
+      </p>
+    </div>
+  </div>
+  <footer>Genre: {{book.Genre}}</footer>
+
+<div #abc id="{{modalId}}" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+      <div class="modal-content">
+        <mat-card>
+            <mat-card-header>
+              <mat-card-title><h3>Rent Book</h3></mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div>Book Name <span style="padding-left:54px;">: {{book.BookName}}</span> </div>
+              <div>Author Name <span style="padding-left:45px;">: {{book.AuthorName}}</span> </div>
+              <div>Issue Date <span style="padding-left:52px;">: {{today | date}}</span> </div>
+              <div>Location <span style="padding-left:54px;">: {{book.Location}}</span> </div>
+            </mat-card-content>
+            <mat-divider></mat-divider>
+            <mat-card-actions>
+              <button mat-raised-button (click)="issueBook(book)">Rent Book</button>
+              <button mat-raised-button data-dismiss="modal">Cancel</button>
+            </mat-card-actions>
+          </mat-card>
+      </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+.modal-backdrop
+{
+    z-index: 0 !important;
+}
+
+mat-toolbar {
+    z-index: 2 !important;
+}
+
+form {
+    z-index: 3 !important;
+}

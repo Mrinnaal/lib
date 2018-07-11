@@ -1,0 +1,44 @@
+[
+	{
+		"username": "tanushree",
+		"password": "pass1",
+		"email": "Tanushree.Pawar@atl.com",
+		"firstName": "Tanushree",
+		"lastName": "Pawar",
+		"userId": "1",
+		"profilePic": "http://1080pwallpaper.net/wp-content/uploads/2017/06/wonder-woman-movie.jpg",
+		"profile": "../../assets/profilepic/tanushree.jpg",
+		"ratedBooks": [],
+		"booksLiked": [],
+		"issuedBooks": [],
+		"history": []
+	},
+	{
+		"username": "mrinnaal",
+		"password": "pass2",
+		"email": "Mrinnaal.Ramani@atl.com",
+		"firstName": "Mrinnaal",
+		"lastName": "Ramani",
+		"userId": "2",
+		"profilePic": "https://5dwallpaper.com/wp-content/uploads/2017/07/K-Ultra-HD-Joker-HD-Desktop-Backgrounds-x-wallpaper-wp008368.jpg",
+		"profile": "../../assets/profilepic/mrinnaal.jpg",
+		"ratedBooks": [],
+		"booksLiked": [],
+		"issuedBooks": [],
+		"history": []
+	},
+	{
+		"username": "sunny",
+		"password": "pass3",
+		"email": "Sunny.Kumar@atl.com",
+		"firstName": "Sunny",
+		"lastName": "Kumar",
+		"userId": "3",
+		"profilePic": "https://images6.alphacoders.com/341/341057.jpg",
+		"profile": "../../assets/profilepic/sunny.jpg",
+		"ratedBooks": [],
+		"booksLiked": [],
+		"issuedBooks": [],
+		"history": []
+	}	
+]
